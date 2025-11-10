@@ -35,22 +35,22 @@ fetch(url)
     })
     .catch((err)=>console.log(err.message));
 
-// async function funcFetch() {
-//     try{
-//         let result = await fetch(url);
-//         if (!result.ok) {
-//         throw new Error(`${result.status}`
-//                 `${result.statusText}`
-//             );
-//         }
-//         let body = await result.json();
-//         let i = 0
-//         let email = [];
-//         for(;i < body.length; i++){
-//             email = [...email,body[i].email];
-//             console.log([body[i].email]);
-//         }
-//         }catch(error){
-//         console.log(err.message);
-//     }
-// }
+async function funcFetch() {
+    try{
+        let result = await fetch(url);
+        if (!result.ok) {
+        throw new Error(`${result.status}`
+                `${result.statusText}`
+            );
+        }
+        let body = await result.json();
+        let i = 0
+        let email = [];
+        for(;i < body.length; i++){
+            email = [...email,body[i].email];
+            console.log([body[i].email]);
+        }
+        }catch(error){
+        console.log(err.message);
+    }
+}
