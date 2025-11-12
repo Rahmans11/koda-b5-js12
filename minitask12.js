@@ -13,23 +13,18 @@ fetch(url)
         let i = 0
         let emailArr = [];
         let email = [];
-        let lowerCaseEmail = [];
-        let charCode = "";
+        let lowerCaseEmail = ['','','','','','','','','',''];
         for(;i < body.length; i++){
             emailArr = [...emailArr,body[i].email];
             email.push(emailArr[i])
-            lowerCaseEmail = email.map(element => {
-                for (let j = 0; j < email[i].length; j++) {
-                if (charCode >= 65 && charCode <= 90) {
-                lowerCaseEmail += String.fromCharCode(charCode + 32);
-                } else {
-                lowerCaseEmail += email[i].charAt(j);
-                }
+            for (let j = 0; j < email[i].length; j++) {
+            let charCode = email[i].charCodeAt(j);
+            if (charCode >= 65 && charCode <= 90) {
+            charCode += 32;
             }
-            return element.lowerCaseEmail;
-            });
+            lowerCaseEmail[i] += String.fromCharCode(charCode);
+            }
         }
-
         console.log(lowerCaseEmail);
         
     })
