@@ -13,7 +13,7 @@ fetch(url)
         let i = 0
         let emailArr = [];
         let email = [];
-        let lowerCaseEmail = ['','','','','','','','','',''];
+        let lowerCaseEmail = []
         for(;i < body.length; i++){
             emailArr = [...emailArr,body[i].email];
             email.push(emailArr[i])
@@ -22,6 +22,9 @@ fetch(url)
             if (charCode >= 65 && charCode <= 90) {
             charCode += 32;
             }
+            if(lowerCaseEmail[i] === undefined){
+                lowerCaseEmail[i] = "";
+            } 
             lowerCaseEmail[i] += String.fromCharCode(charCode);
             }
         }
